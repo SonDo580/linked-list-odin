@@ -90,6 +90,7 @@ function linkedListFactory() {
     let node = head();
     while (node.next !== null) {
       str += `( ${node.value} ) -> `;
+      node = node.next;
     }
     str += "null";
     return str;
@@ -125,3 +126,6 @@ function linkedListFactory() {
     removeAt,
   };
 }
+
+const linkedList = linkedListFactory();
+console.log(linkedList.toString());
