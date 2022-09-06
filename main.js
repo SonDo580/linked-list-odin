@@ -3,16 +3,17 @@ function nodeFactory(value = null, next = null) {
 }
 
 function linkedListFactory() {
-  let list = {
-    value: 1,
-    next: {
-      value: 2,
-      next: {
-        value: "a",
-        next: null,
-      },
-    },
-  };
+  // let list = {
+  //   value: 1,
+  //   next: {
+  //     value: 2,
+  //     next: {
+  //       value: "a",
+  //       next: null,
+  //     },
+  //   },
+  // };
+  let list = null;
 
   const head = () => {
     return list;
@@ -126,13 +127,13 @@ function linkedListFactory() {
   };
 
   const removeAt = (index) => {
-    if (index === size() - 1) {
-      pop();
+    if (index === 0) {
+      list = list.next;
       return;
     }
 
-    if (index === 0) {
-      list = list.next;
+    if (index === size() - 1) {
+      pop();
       return;
     }
 
