@@ -61,5 +61,10 @@ function linkedListFactory() {
     return node;
   };
 
-  return { append, prepend, size, head, tail, at };
+  const pop = () => {
+    let newTail = list.at(list.size() - 1);
+    newTail.next = null;
+  };
+
+  return { append, prepend, size, head, tail, at, pop };
 }
