@@ -14,6 +14,18 @@ function linkedListFactory() {
     },
   };
 
+  const head = () => {
+    return list;
+  };
+
+  const tail = () => {
+    let node = head();
+    while (node.next !== null) {
+      node = node.next;
+    }
+    return node;
+  };
+
   const append = (value) => {
     const newNode = nodeFactory(value);
     let tail = tail();
@@ -33,18 +45,6 @@ function linkedListFactory() {
       size++;
     }
     return size;
-  };
-
-  const head = () => {
-    return list;
-  };
-
-  const tail = () => {
-    let node = head();
-    while (node.next !== null) {
-      node = node.next;
-    }
-    return node;
   };
 
   const at = (index) => {
@@ -128,4 +128,5 @@ function linkedListFactory() {
 }
 
 const linkedList = linkedListFactory();
+linkedList.append("Shadow");
 console.log(linkedList.toString());
