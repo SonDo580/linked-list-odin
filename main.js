@@ -1,5 +1,4 @@
 function nodeFactory(value = null, next = null) {
-  //   need getter and setter
   return { value, next };
 }
 
@@ -22,12 +21,12 @@ function linkedListFactory() {
   };
 
   const prepend = (value) => {
-    const newNode = nodeFactory(value, list);
+    const newNode = nodeFactory(value, head());
     list = newNode;
   };
 
   const size = () => {
-    let node = list;
+    let node = head();
     let size = 1;
     while (node.next !== null) {
       node = node.next;
@@ -41,7 +40,7 @@ function linkedListFactory() {
   };
 
   const tail = () => {
-    let node = list;
+    let node = head();
     while (node.next !== null) {
       node = node.next;
     }
@@ -49,7 +48,7 @@ function linkedListFactory() {
   };
 
   const at = (index) => {
-    let node = list;
+    let node = head();
     for (let i = 1; i <= index; i++) {
       node = node.next;
     }
@@ -60,6 +59,10 @@ function linkedListFactory() {
     let newTail = at(size() - 1);
     newTail.next = null;
   };
+
+  //   const contains = (value) => {
+  //     let node = head();
+  //   };
 
   return { append, prepend, size, head, tail, at, pop };
 }
