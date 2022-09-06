@@ -28,8 +28,11 @@ function linkedListFactory() {
 
   const append = (value) => {
     const newNode = nodeFactory(value);
-    const tail = tail();
-    tail.next = newNode;
+    let node = head();
+    while (node.next !== null) {
+      node = node.next;
+    }
+    node.next = newNode;
   };
 
   const prepend = (value) => {
@@ -147,4 +150,7 @@ console.log("find 2: ", linkedList.find(2));
 console.log("find h: ", linkedList.find("h"));
 
 linkedList.prepend("Shadow");
+console.log(linkedList.toString());
+
+linkedList.append("Sonic");
 console.log(linkedList.toString());
