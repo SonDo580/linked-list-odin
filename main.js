@@ -103,7 +103,14 @@ function linkedListFactory() {
   };
 
   const insertAt = (index, value) => {
-    if (index < 0 || index >= size()) {
+    if (index === 0) {
+      prepend(value);
+      return;
+    } else if (index === size()) {
+      append(value);
+      return;
+    }
+    if (index < 0 || index > size()) {
       throw Error("Out of range");
     }
 
