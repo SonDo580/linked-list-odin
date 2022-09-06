@@ -28,7 +28,7 @@ function linkedListFactory() {
 
   const append = (value) => {
     const newNode = nodeFactory(value);
-    let tail = tail();
+    const tail = tail();
     tail.next = newNode;
   };
 
@@ -146,5 +146,5 @@ console.log("list contain h: ", linkedList.contains("h"));
 console.log("find 2: ", linkedList.find(2));
 console.log("find h: ", linkedList.find("h"));
 
-// linkedList.append("Shadow");
-// console.log(linkedList.toString());
+linkedList.prepend("Shadow");
+console.log(linkedList.toString());
