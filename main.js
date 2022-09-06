@@ -78,7 +78,7 @@ function linkedListFactory() {
     let node = head();
     let foundIndex = null;
     let i = 0;
-    while (node.next !== null) {
+    while (node !== null) {
       if (node.value === value) {
         foundIndex = i;
       }
@@ -143,6 +143,8 @@ linkedList.pop();
 console.log("after pop: ", linkedList.toString());
 console.log("list contain 2: ", linkedList.contains(2));
 console.log("list contain h: ", linkedList.contains("h"));
+console.log("find 2: ", linkedList.find(2));
+console.log("find h: ", linkedList.find("h"));
 
 // linkedList.append("Shadow");
 // console.log(linkedList.toString());
