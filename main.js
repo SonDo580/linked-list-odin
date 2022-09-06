@@ -62,7 +62,7 @@ function linkedListFactory() {
   };
 
   const pop = () => {
-    let newTail = list.at(list.size() - 1);
+    let newTail = at(size() - 1);
     newTail.next = null;
   };
 
