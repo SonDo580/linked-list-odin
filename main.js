@@ -25,5 +25,7 @@ function linkedListFactory() {
     lastNode.next = newNode;
   };
 
+  const prepend = (value) => {};
+
   return { append };
 }
