@@ -66,9 +66,14 @@ function linkedListFactory() {
   };
 
   const at = (index) => {
+    if (size() === 0) {
+      throw Error("Empty list");
+    }
+
     if (index < 0 || index >= size()) {
       throw Error("Out of range");
     }
+
     let node = head();
     for (let i = 1; i <= index; i++) {
       node = node.next;
