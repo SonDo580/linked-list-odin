@@ -36,7 +36,8 @@ function linkedListFactory() {
     let node = head();
 
     if (node === null) {
-      node = newNode;
+      list = newNode;
+      return;
     }
 
     while (node.next !== null) {
@@ -176,6 +177,10 @@ const linkedList = linkedListFactory();
 console.log(linkedList.toString());
 console.log("head: ", linkedList.head());
 console.log("tail: ", linkedList.tail());
+linkedList.append(2);
+linkedList.append("a");
+linkedList.prepend(1);
+console.log(linkedList.toString());
 console.log("size: ", linkedList.size());
 console.log("at 1: ", linkedList.at(1));
 // console.log("at -1: ", linkedList.at(1)); error
