@@ -17,13 +17,8 @@ function linkedListFactory() {
 
   const append = (value) => {
     const newNode = nodeFactory(value);
-
-    let node = list;
-    while (node.next !== null) {
-      node = node.next;
-    }
-
-    node.next = newNode;
+    let tail = tail();
+    tail.next = newNode;
   };
 
   const prepend = (value) => {
