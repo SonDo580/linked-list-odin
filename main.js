@@ -21,6 +21,8 @@ function linkedListFactory() {
     while (lastNode.next !== null) {
       lastNode = lastNode.next;
     }
+
+    lastNode.next = newNode;
   };
 
   return { append };
