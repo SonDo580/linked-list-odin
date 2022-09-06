@@ -71,5 +71,19 @@ function linkedListFactory() {
     return false;
   };
 
-  return { append, prepend, size, head, tail, at, pop, contains };
+  const find = (value) => {
+    let node = head();
+    let foundIndex = null;
+    let i = 0;
+    while (node.next !== null) {
+      if (node.value === value) {
+        foundIndex = i;
+      }
+      node = node.next;
+      i++;
+    }
+    return foundIndex;
+  };
+
+  return { append, prepend, size, head, tail, at, pop, contains, find };
 }
