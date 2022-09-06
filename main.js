@@ -17,10 +17,10 @@ function linkedListFactory() {
   const append = (value) => {
     const newNode = nodeFactory(value);
 
-    // let lastNode = list;
-    // while (lastNode.next !== null) {
-    //   lastNode = lastNode.next;
-    // }
+    let lastNode = list;
+    while (lastNode.next !== null) {
+      lastNode = lastNode.next;
+    }
   };
 
   return { append };
