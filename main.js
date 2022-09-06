@@ -88,7 +88,7 @@ function linkedListFactory() {
   const toString = () => {
     let str = "";
     let node = head();
-    while (node.next !== null) {
+    while (node !== null) {
       str += `( ${node.value} ) -> `;
       node = node.next;
     }
