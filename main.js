@@ -82,6 +82,15 @@ function linkedListFactory() {
   };
 
   const pop = () => {
+    if (size() === 0) {
+      throw Error("Empty list");
+    }
+
+    if (size() === 1) {
+      list = null;
+      return;
+    }
+
     let newTail = at(size() - 2);
     newTail.next = null;
   };
@@ -190,22 +199,22 @@ function linkedListFactory() {
 }
 
 // TEST
-const linkedList = linkedListFactory();
-console.log(linkedList.toString());
-console.log("head: ", linkedList.head());
-console.log("tail: ", linkedList.tail());
+// const linkedList = linkedListFactory();
+// console.log(linkedList.toString());
+// console.log("head: ", linkedList.head());
+// console.log("tail: ", linkedList.tail());
 // linkedList.append(2);
 // linkedList.append("a");
 // linkedList.prepend(1);
 // console.log(linkedList.toString());
-console.log("size: ", linkedList.size());
+// console.log("size: ", linkedList.size());
 // console.log("at 1: ", linkedList.at(1));
 // linkedList.pop();
 // console.log("after pop: ", linkedList.toString());
-console.log("list contains 2: ", linkedList.contains(2));
-console.log("list contains h: ", linkedList.contains("h"));
-console.log("find 2: ", linkedList.find(2));
-console.log("find h: ", linkedList.find("h"));
+// console.log("list contains 2: ", linkedList.contains(2));
+// console.log("list contains h: ", linkedList.contains("h"));
+// console.log("find 2: ", linkedList.find(2));
+// console.log("find h: ", linkedList.find("h"));
 // linkedList.prepend("Shadow");
 // console.log(linkedList.toString());
 // linkedList.append("Sonic");
@@ -214,7 +223,7 @@ console.log("find h: ", linkedList.find("h"));
 // linkedList.insertAt(0, 1.5);
 // linkedList.insertAt(linkedList.size(), 1.5);
 // console.log(linkedList.toString());
-linkedList.removeAt(0);
-linkedList.removeAt(3);
-linkedList.removeAt(linkedList.size() - 1, 1.5);
-console.log(linkedList.toString());
+// linkedList.removeAt(0);
+// linkedList.removeAt(3);
+// linkedList.removeAt(linkedList.size() - 1, 1.5);
+// console.log(linkedList.toString());
