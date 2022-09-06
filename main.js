@@ -53,6 +53,10 @@ function linkedListFactory() {
 
   const size = () => {
     let node = head();
+    if (node === null) {
+      return 0;
+    }
+
     let size = 1;
     while (node.next !== null) {
       node = node.next;
