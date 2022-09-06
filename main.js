@@ -85,5 +85,26 @@ function linkedListFactory() {
     return foundIndex;
   };
 
-  return { append, prepend, size, head, tail, at, pop, contains, find };
+  const toString = () => {
+    let str = "";
+    let node = head();
+    while (node.next !== null) {
+      str += `( ${node.value} ) -> `;
+    }
+    str += "null";
+    return str;
+  };
+
+  return {
+    append,
+    prepend,
+    size,
+    head,
+    tail,
+    at,
+    pop,
+    contains,
+    find,
+    toString,
+  };
 }
