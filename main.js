@@ -21,6 +21,10 @@ function linkedListFactory() {
 
   const tail = () => {
     let node = head();
+    if (node === null) {
+      return node;
+    }
+
     while (node.next !== null) {
       node = node.next;
     }
