@@ -104,6 +104,12 @@ function linkedListFactory() {
     newNode.next = nodeAtIndex;
   };
 
+  const removeAt = (index) => {
+    const nodeBeforeIndex = at(index - 1);
+    const nodeAfterIndex = at(index + 1);
+    nodeBeforeIndex.next = nodeAfterIndex;
+  };
+
   return {
     append,
     prepend,
@@ -116,5 +122,6 @@ function linkedListFactory() {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 }
