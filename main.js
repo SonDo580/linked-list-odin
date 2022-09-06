@@ -60,9 +60,16 @@ function linkedListFactory() {
     newTail.next = null;
   };
 
-  //   const contains = (value) => {
-  //     let node = head();
-  //   };
+  const contains = (value) => {
+    let node = head();
+    while (node.next !== null) {
+      if (node.value === value) {
+        return true;
+      }
+      node = node.next;
+    }
+    return false;
+  };
 
-  return { append, prepend, size, head, tail, at, pop };
+  return { append, prepend, size, head, tail, at, pop, contains };
 }
