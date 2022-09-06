@@ -48,6 +48,9 @@ function linkedListFactory() {
   };
 
   const at = (index) => {
+    if (index < 0 || index >= size()) {
+      throw Error("Out of range");
+    }
     let node = head();
     for (let i = 1; i <= index; i++) {
       node = node.next;
@@ -127,6 +130,13 @@ function linkedListFactory() {
   };
 }
 
+// TEST
 const linkedList = linkedListFactory();
-linkedList.append("Shadow");
 console.log(linkedList.toString());
+
+console.log("head: ", linkedList.head());
+console.log("tail: ", linkedList.tail());
+console.log("size: ", linkedList.size());
+console.log("size: ", linkedList.at(3));
+// linkedList.append("Shadow");
+// console.log(linkedList.toString());
