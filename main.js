@@ -162,6 +162,13 @@ linkedList.append("Sonic");
 console.log(linkedList.toString());
 // linkedList.insertAt(-1, 1.5); error
 // linkedList.insertAt(10, 1.5); error
-linkedList.insertAt(3, 1.5);
 linkedList.insertAt(1, 1.5);
+linkedList.insertAt(0, 1.5);
+linkedList.insertAt(linkedList.size(), 1.5);
+console.log(linkedList.toString());
+// linkedList.removeAt(-1); error
+// linkedList.removeAt(10); error
+linkedList.removeAt(2);
+linkedList.removeAt(0);
+linkedList.removeAt(linkedList.size() - 1, 1.5);
 console.log(linkedList.toString());
