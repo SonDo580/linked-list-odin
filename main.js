@@ -87,6 +87,10 @@ function linkedListFactory() {
   };
 
   const contains = (value) => {
+    if (size() === 0) {
+      return false;
+    }
+
     let node = head();
     while (node !== null) {
       if (node.value === value) {
@@ -191,13 +195,13 @@ console.log("tail: ", linkedList.tail());
 // linkedList.prepend(1);
 // console.log(linkedList.toString());
 console.log("size: ", linkedList.size());
-console.log("at 1: ", linkedList.at(1));
+// console.log("at 1: ", linkedList.at(1));
 // console.log("at -1: ", linkedList.at(1)); error
 // console.log("at 4: ", linkedList.at(4)); error
-linkedList.pop();
-console.log("after pop: ", linkedList.toString());
-console.log("list contain 2: ", linkedList.contains(2));
-console.log("list contain h: ", linkedList.contains("h"));
+// linkedList.pop();
+// console.log("after pop: ", linkedList.toString());
+console.log("list contains 2: ", linkedList.contains(2));
+console.log("list contains h: ", linkedList.contains("h"));
 console.log("find 2: ", linkedList.find(2));
 console.log("find h: ", linkedList.find("h"));
 linkedList.prepend("Shadow");
