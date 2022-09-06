@@ -30,9 +30,15 @@ function linkedListFactory() {
     list = newNode;
   };
 
-  //   const size = () => {
-  //     let node =
-  //   }
+  const size = () => {
+    let node = list;
+    let size = 1;
+    while (node.next !== null) {
+      node = node.next;
+      size++;
+    }
+    return size;
+  };
 
-  return { append, prepend };
+  return { append, prepend, size };
 }
