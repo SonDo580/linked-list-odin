@@ -106,10 +106,13 @@ function linkedListFactory() {
     if (index === 0) {
       prepend(value);
       return;
-    } else if (index === size()) {
+    }
+
+    if (index === size()) {
       append(value);
       return;
     }
+
     if (index < 0 || index > size()) {
       throw Error("Out of range");
     }
@@ -125,6 +128,11 @@ function linkedListFactory() {
   const removeAt = (index) => {
     if (index === size() - 1) {
       pop();
+      return;
+    }
+
+    if (index === 0) {
+      list = list.next;
       return;
     }
 
