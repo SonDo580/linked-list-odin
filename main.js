@@ -17,18 +17,22 @@ function linkedListFactory() {
   const append = (value) => {
     const newNode = nodeFactory(value);
 
-    let lastNode = list;
-    while (lastNode.next !== null) {
-      lastNode = lastNode.next;
+    let node = list;
+    while (node.next !== null) {
+      node = node.next;
     }
 
-    lastNode.next = newNode;
+    node.next = newNode;
   };
 
   const prepend = (value) => {
     const newNode = nodeFactory(value, list);
     list = newNode;
   };
+
+  //   const size = () => {
+  //     let node =
+  //   }
 
   return { append, prepend };
 }
