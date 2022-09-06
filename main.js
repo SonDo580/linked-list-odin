@@ -123,6 +123,11 @@ function linkedListFactory() {
   };
 
   const removeAt = (index) => {
+    if (index === size() - 1) {
+      pop();
+      return;
+    }
+
     if (index < 0 || index >= size()) {
       throw Error("Out of range");
     }
