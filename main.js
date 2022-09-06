@@ -3,7 +3,7 @@ function nodeFactory(value = null, next = null) {
 }
 
 function linkedListFactory() {
-  const list = {
+  let list = {
     value: 1,
     next: {
       value: 2,
@@ -25,7 +25,10 @@ function linkedListFactory() {
     lastNode.next = newNode;
   };
 
-  const prepend = (value) => {};
+  const prepend = (value) => {
+    const newNode = nodeFactory(value, list);
+    list = newNode;
+  };
 
-  return { append };
+  return { append, prepend };
 }
