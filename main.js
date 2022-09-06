@@ -3,16 +3,6 @@ function nodeFactory(value = null, next = null) {
 }
 
 function linkedListFactory() {
-  // let list = {
-  //   value: 1,
-  //   next: {
-  //     value: 2,
-  //     next: {
-  //       value: "a",
-  //       next: null,
-  //     },
-  //   },
-  // };
   let list = null;
 
   const head = () => {
