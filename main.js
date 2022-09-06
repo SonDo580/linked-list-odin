@@ -59,7 +59,7 @@ function linkedListFactory() {
   };
 
   const pop = () => {
-    let newTail = at(size() - 1);
+    let newTail = at(size() - 2);
     newTail.next = null;
   };
 
@@ -137,6 +137,9 @@ console.log(linkedList.toString());
 console.log("head: ", linkedList.head());
 console.log("tail: ", linkedList.tail());
 console.log("size: ", linkedList.size());
-console.log("size: ", linkedList.at(3));
+console.log("at 1: ", linkedList.at(1));
+// console.log("at -1: ", linkedList.at(1)); error
+// console.log("at 4: ", linkedList.at(4)); error
+
 // linkedList.append("Shadow");
 // console.log(linkedList.toString());
