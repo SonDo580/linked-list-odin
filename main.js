@@ -177,10 +177,10 @@ const linkedList = linkedListFactory();
 console.log(linkedList.toString());
 console.log("head: ", linkedList.head());
 console.log("tail: ", linkedList.tail());
-linkedList.append(2);
-linkedList.append("a");
-linkedList.prepend(1);
-console.log(linkedList.toString());
+// linkedList.append(2);
+// linkedList.append("a");
+// linkedList.prepend(1);
+// console.log(linkedList.toString());
 console.log("size: ", linkedList.size());
 console.log("at 1: ", linkedList.at(1));
 // console.log("at -1: ", linkedList.at(1)); error
@@ -203,7 +203,7 @@ linkedList.insertAt(linkedList.size(), 1.5);
 console.log(linkedList.toString());
 // linkedList.removeAt(-1); error
 // linkedList.removeAt(10); error
-linkedList.removeAt(2);
+linkedList.removeAt(3);
 linkedList.removeAt(0);
 linkedList.removeAt(linkedList.size() - 1, 1.5);
 console.log(linkedList.toString());
