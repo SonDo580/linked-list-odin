@@ -95,6 +95,15 @@ function linkedListFactory() {
     return str;
   };
 
+  const insertAt = (index, value) => {
+    const nodeAtIndex = at(index);
+    const nodeBeforeIndex = at(index - 1);
+    const newNode = nodeFactory(value);
+
+    nodeBeforeIndex.next = newNode;
+    newNode.next = nodeAtIndex;
+  };
+
   return {
     append,
     prepend,
@@ -106,5 +115,6 @@ function linkedListFactory() {
     contains,
     find,
     toString,
+    insertAt,
   };
 }
