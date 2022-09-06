@@ -103,6 +103,10 @@ function linkedListFactory() {
   };
 
   const insertAt = (index, value) => {
+    if (index < 0 || index >= size()) {
+      throw Error("Out of range");
+    }
+
     const nodeAtIndex = at(index);
     const nodeBeforeIndex = at(index - 1);
     const newNode = nodeFactory(value);
@@ -112,6 +116,10 @@ function linkedListFactory() {
   };
 
   const removeAt = (index) => {
+    if (index < 0 || index >= size()) {
+      throw Error("Out of range");
+    }
+
     const nodeBeforeIndex = at(index - 1);
     const nodeAfterIndex = at(index + 1);
     nodeBeforeIndex.next = nodeAfterIndex;
@@ -148,9 +156,12 @@ console.log("list contain 2: ", linkedList.contains(2));
 console.log("list contain h: ", linkedList.contains("h"));
 console.log("find 2: ", linkedList.find(2));
 console.log("find h: ", linkedList.find("h"));
-
 linkedList.prepend("Shadow");
 console.log(linkedList.toString());
-
 linkedList.append("Sonic");
+console.log(linkedList.toString());
+// linkedList.insertAt(-1, 1.5); error
+// linkedList.insertAt(10, 1.5); error
+linkedList.insertAt(3, 1.5);
+linkedList.insertAt(1, 1.5);
 console.log(linkedList.toString());
