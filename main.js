@@ -53,5 +53,13 @@ function linkedListFactory() {
     return node;
   };
 
-  return { append, prepend, size, head, tail };
+  const at = (index) => {
+    let node = list;
+    for (let i = 1; i <= index; i++) {
+      node = node.next;
+    }
+    return node;
+  };
+
+  return { append, prepend, size, head, tail, at };
 }
