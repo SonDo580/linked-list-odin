@@ -150,6 +150,10 @@ function linkedListFactory() {
   };
 
   const removeAt = (index) => {
+    if (size() === 0) {
+      throw Error("Empty list");
+    }
+
     if (index === 0) {
       list = list.next;
       return;
@@ -196,27 +200,21 @@ console.log("tail: ", linkedList.tail());
 // console.log(linkedList.toString());
 console.log("size: ", linkedList.size());
 // console.log("at 1: ", linkedList.at(1));
-// console.log("at -1: ", linkedList.at(1)); error
-// console.log("at 4: ", linkedList.at(4)); error
 // linkedList.pop();
 // console.log("after pop: ", linkedList.toString());
 console.log("list contains 2: ", linkedList.contains(2));
 console.log("list contains h: ", linkedList.contains("h"));
 console.log("find 2: ", linkedList.find(2));
 console.log("find h: ", linkedList.find("h"));
-linkedList.prepend("Shadow");
-console.log(linkedList.toString());
-linkedList.append("Sonic");
-console.log(linkedList.toString());
-// linkedList.insertAt(-1, 1.5); error
-// linkedList.insertAt(10, 1.5); error
-linkedList.insertAt(1, 1.5);
-linkedList.insertAt(0, 1.5);
-linkedList.insertAt(linkedList.size(), 1.5);
-console.log(linkedList.toString());
-// linkedList.removeAt(-1); error
-// linkedList.removeAt(10); error
-linkedList.removeAt(3);
+// linkedList.prepend("Shadow");
+// console.log(linkedList.toString());
+// linkedList.append("Sonic");
+// console.log(linkedList.toString());
+// linkedList.insertAt(1, 1.5);
+// linkedList.insertAt(0, 1.5);
+// linkedList.insertAt(linkedList.size(), 1.5);
+// console.log(linkedList.toString());
 linkedList.removeAt(0);
+linkedList.removeAt(3);
 linkedList.removeAt(linkedList.size() - 1, 1.5);
 console.log(linkedList.toString());
