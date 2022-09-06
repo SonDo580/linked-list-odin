@@ -34,6 +34,11 @@ function linkedListFactory() {
   const append = (value) => {
     const newNode = nodeFactory(value);
     let node = head();
+
+    if (node === null) {
+      node = newNode;
+    }
+
     while (node.next !== null) {
       node = node.next;
     }
